@@ -31,9 +31,12 @@ class MainScene extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(0.0, 20.0, 0, 0.0),
       width: MediaQuery.of(_context).size.width * 0.65,
       height: MediaQuery.of(_context).size.height * 0.3,
-      child: Image(
-        image: AssetImage('assets/images/logo.png'),
-        fit: BoxFit.fill,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: AssetImage("assets/images/logo2.jpg"),
+        ),
       ),
     );
   }
