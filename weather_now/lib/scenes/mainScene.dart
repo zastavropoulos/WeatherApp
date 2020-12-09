@@ -18,7 +18,7 @@ class MainScene extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           color: Colors.black,
-          child: Column(
+          child: Stack(
             children: [imageContainer(context), searchAndButton(context)],
           ),
         ),
@@ -29,13 +29,29 @@ class MainScene extends StatelessWidget {
   Widget imageContainer(BuildContext _context) {
     return Container(
       margin: EdgeInsets.fromLTRB(0.0, 20.0, 0, 0.0),
-      width: MediaQuery.of(_context).size.width * 0.65,
-      height: MediaQuery.of(_context).size.height * 0.3,
-      decoration: BoxDecoration(
+      width: MediaQuery.of(_context).size.width,
+      height: MediaQuery.of(_context).size.height,
+      /*decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage("assets/images/logo2.jpg"),
+        ),
+      ),*/
+      child: Container(
+        height: MediaQuery.of(_context).size.height,
+        width: MediaQuery.of(_context).size.width,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          gradient: LinearGradient(
+            begin: FractionalOffset.topCenter,
+            end: FractionalOffset.bottomCenter,
+            colors: [
+              Colors.grey.withOpacity(0.0),
+              Colors.black,
+            ],
+            stops: [0.0, 1.0],
+          ),
         ),
       ),
     );
@@ -45,10 +61,19 @@ class MainScene extends StatelessWidget {
     return Container(
       width: MediaQuery.of(_context).size.width,
       height: MediaQuery.of(_context).size.height * 0.4,
-      margin: EdgeInsets.symmetric(horizontal: 15.0),
+      margin: EdgeInsets.symmetric(
+          horizontal: 15.0,
+          vertical: MediaQuery.of(_context).size.height * 0.3),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            "Find the weather in you city",
+            style: TextStyle(color: Colors.white,fontSize: 25.0),
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
           serachBox(),
           SizedBox(
             height: 30.0,

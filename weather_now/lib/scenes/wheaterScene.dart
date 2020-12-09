@@ -24,8 +24,30 @@ class WeatherScene extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           color: Colors.black,
-          child: Column(
-            children: [cityInfo(context), tempInfo(context), moreInfo(context)],
+          child: Stack(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  gradient: LinearGradient(
+                    begin: FractionalOffset.topCenter,
+                    end: FractionalOffset.bottomCenter,
+                    colors: [
+                      Colors.grey.withOpacity(0.0),
+                      Colors.black,
+                    ],
+                    stops: [0.0, 1.0],
+                  ),
+                ),
+              ),
+              Column(children: [
+                cityInfo(context),
+                tempInfo(context),
+                moreInfo(context)
+              ]),
+            ],
           ),
         ),
       ),
