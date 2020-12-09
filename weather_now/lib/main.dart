@@ -11,13 +11,12 @@ class mainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Weather now",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: createMaterialColor(Color(0xFF000000)),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MainScene(),
-    );
+        title: "Weather now",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: createMaterialColor(Color(0xFF000000)),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MainScene());
   }
 }

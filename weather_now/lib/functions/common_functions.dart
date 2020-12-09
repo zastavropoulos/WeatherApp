@@ -19,3 +19,7 @@ MaterialColor createMaterialColor(Color color) {
   });
   return MaterialColor(color.value, swatch);
 }
+
+String convertToCelsius(int value) {
+  return (value - 273).toString();
+}
