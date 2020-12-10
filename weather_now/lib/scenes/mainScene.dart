@@ -13,14 +13,18 @@ class MainScene extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.black,
-          child: Stack(
-            children: [imageContainer(context), searchAndButton(context)],
-          ),
+      body: searchPage(context),
+    );
+  }
+
+  Widget searchPage(BuildContext _context) {
+    return SingleChildScrollView(
+      child: Container(
+        width: MediaQuery.of(_context).size.width,
+        height: MediaQuery.of(_context).size.height,
+        color: Colors.black,
+        child: Stack(
+          children: [imageContainer(_context), searchAndButton(_context)],
         ),
       ),
     );
